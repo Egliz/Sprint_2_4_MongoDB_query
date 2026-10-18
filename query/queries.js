@@ -28,6 +28,7 @@ db.restaurants.find({ grades: { $elemMatch: { score: { $gt: 80, $lt: 100 } } } }
 
 
 // 10. Trobar els restaurants amb longitud menor que -95.754168.
+db.restaurants.find({ "location.coordinates.0": { $lt: -95.754168 } }, { _id: 0 });
 
 
 // 11. Trobar restaurants que no preparen 'American', amb qualificació > 70 i longitud < -65.754168.
