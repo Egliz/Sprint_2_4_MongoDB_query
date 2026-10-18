@@ -110,3 +110,4 @@ db.restaurants.find({ "grades.score": { $mod: [7, 0] } }, { _id: 0, restaurant_i
 db.restaurants.find({ name: /mon/i }, { _id: 0, name: 1, borough: 1, "location.coordinates": 1, cuisine: 1 });
 
 // 32. Mostrar restaurant_id, name i grade i score de més de 80 però menys que 100.
+db.restaurants.find({ grades: { $elemMatch: { score: { $gt: 80, $lt: 100 } } } }, { _id: 0, restaurant_id: 1, name: 1, "grades.grade": 1, "grades.score": 1 });
