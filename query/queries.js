@@ -64,6 +64,7 @@ db.restaurants.find({ borough: { $in: ["Staten Island", "Queens", "Bronx", "Broo
 
 
 // 19. Trobar restaurant_id, name, borough i cuisine per a restaurants que NO són d'aquests barris.
+db.restaurants.find({ borough: { $nin: ["Staten Island", "Queens", "Bronx", "Brooklyn"] } }, { _id: 0, restaurant_id: 1, name: 1, borough: 1, cuisine: 1 });
 
 
 // 20. Trobar restaurant_id, name, borough i cuisine amb marcador no superior a 10.
